@@ -41,9 +41,15 @@ header .nav-main {
 header h1 span {
   color: #616161;
 }
-header a {
-  text-decoration: none;
-  color: inherit;
+header #logo h1,
+header #logo span {
+  transition: color 0.2s;
+}
+header #logo:hover span {
+  color: #f5ae7d;
+}
+header #logo:hover h1 {
+  color: #ff6700;
 }
 header a:not(:last-of-type) {
   margin-right: 0.4rem;
@@ -153,7 +159,11 @@ section.read-more ion-icon {
 }
 section.read-more img {
   width: 100%;
+  height: auto;
   object-fit: cover;
+  object-position: 100% 0;
+  transform: scale(1.1);
+  transition: transform 0.6s;
 }
 section.read-more figure {
   margin-top: 1rem;
@@ -264,6 +274,34 @@ footer .container > * {
   footer.footer-main {
     padding-top: 0;
   }
+}
+/*Transition*/
+a {
+  text-decoration: none;
+  color: inherit;
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -ms-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s;
+  padding: 5px;
+}
+
+header .main-title .header__buttons a {
+  transition: color 0.2s;
+}
+
+a:hover,
+header .main-title .header__buttons a:hover {
+  color: #f5ae7d;
+}
+
+header .main-title .header__buttons a:hover {
+  background-color: #333;
+}
+
+section.read-more img:hover {
+  transform: scale(1);
 }
 
 /*# sourceMappingURL=style.css.map */

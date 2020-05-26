@@ -1,6 +1,7 @@
 $color-main: #333;
 $color-secondary: rgba(244, 244, 244, 0.8);
 $color-gray: #616161;
+$color-accent: #f5ae7d;
 
 
 
@@ -53,10 +54,20 @@ header{
     }
   }
 
-  a{
-    text-decoration: none;
-    color: inherit;
+  #logo h1,
+  #logo span{
+    transition: color .2s;
   }
+
+  #logo:hover span{
+    color: $color-accent;
+  }
+
+  #logo:hover h1{
+    color: #ff6700;
+  }
+
+
 
   a:not(:last-of-type){
     margin-right: .4rem;
@@ -117,7 +128,7 @@ section.info{
   }
 
   p:first-of-type{
-    color: #f5ae7d;
+    color: $color-accent;
   }
 
   p:nth-of-type(2){
@@ -195,7 +206,11 @@ section.read-more{
 
   img{
     width: 100%;
+    height: auto;
     object-fit: cover;
+    object-position: 100% 0;
+    transform: scale(1.1);
+    transition: transform .6s;
   }
 
   figure{
@@ -328,4 +343,36 @@ footer.footer-main{
     padding-top: 0;
   }
 
+}
+
+
+
+/*Transition*/
+
+a{
+  text-decoration: none;
+  color: inherit;
+  -webkit-transition: color .2s;
+  -moz-transition: color .2s;
+  -ms-transition: color .2s;
+  -o-transition: color .2s;
+  transition: color .2s;
+  padding: 5px;
+}
+
+header .main-title .header__buttons a{
+  transition: color .2s;
+}
+
+a:hover,
+header .main-title .header__buttons a:hover{
+  color: $color-accent;
+}
+
+header .main-title .header__buttons a:hover{
+  background-color: $color-main;
+}
+
+section.read-more img:hover{
+  transform: scale(1);
 }
